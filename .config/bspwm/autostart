@@ -4,5 +4,9 @@ autorandr --change
 
 panel &
 
+gnome-settings-daemon &
+
+gnome-panel &
+
 gnome-terminal &
 
