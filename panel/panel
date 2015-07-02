@@ -15,8 +15,6 @@ bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
 ## clock -sf 'S%a %H:%M' > "$PANEL_FIFO" &
 
-source $HOME/bspwm/panel_colors
-
 cat "$PANEL_FIFO" | panel_bar | bar -g x$PANEL_HEIGHT -b -f "$PANEL_FONT_FAMILY" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
 
 wait
