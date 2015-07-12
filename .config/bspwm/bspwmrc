@@ -20,4 +20,6 @@ bspc monitor VGA1 -d I II III IV V VI VII VIII IX X
 bspc rule -a URxvtQuake sticky=on floating=on
 
 panel &
+
+bspc config bottom_padding 30
 tint2 &
