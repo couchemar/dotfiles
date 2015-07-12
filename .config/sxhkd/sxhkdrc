@@ -78,17 +78,23 @@ super + @button{1-3}
 #
 
 super + Return
-	gnome-terminal
+	konsole
 
 super + space
 	dmenu_run
 
-# make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd ; \
+  pkill -USR1 -x tint2
 
 # open a "scratchpad" terminal
 F12
   xdotool search --onlyvisible --classname URxvtQuake windowunmap \
     || xdotool search --classname URxvtQuake windowmap \
     || urxvt -name URxvtQuake -geometry 110x20+297+1
+
+F1
+  setxkbmap us
+
+F2
+  setxkbmap ru
