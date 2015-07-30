@@ -15,8 +15,13 @@ super + w
 super + t
 	bspc desktop -l next
 
+# balance
 super + b
 	bspc desktop -B
+
+# equalise
+super + e
+      	bspc desktop -E
 
 super + {s,f}
 	bspc window -t {floating,fullscreen}
@@ -36,7 +41,7 @@ super + y
 	bspc window -w last.manual
 
 super + m
-	bspc window -s biggest
+	bspc window -s biggest 
 
 super + {_,shift + }{h,j,k,l}
 	bspc window -{f,s} {left,down,up,right}
@@ -44,8 +49,17 @@ super + {_,shift + }{h,j,k,l}
 super + {_,shift + }c
 	bspc window -f {next,prev}
 
+# circulate leaves
 super + {comma,period}
 	bspc desktop -C {backward,forward}
+
+# flip
+super + ctrl + {comma,period}
+      	bspc desktop -F {horizontal,vertical}
+
+# rotate
+super + alt + {comma,period}
+      	bspc desktop -R {90,270}
 
 # next/prev desktop
 super + bracket{left,right}
