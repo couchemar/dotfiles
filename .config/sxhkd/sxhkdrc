@@ -87,6 +87,10 @@ super + ctrl + {1-9}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,window -d} ^{1-9,10}
 
+# swap monitors
+super + q
+      	bspc monitor -s $(bspc query -M | grep -v $(bspc query -M -m))
+
 ~button1
 	bspc pointer -g focus
 
@@ -105,17 +109,23 @@ super + F{1,2}
 #
 
 super + Return
-	gnome-terminal
+	lilyterm
 
 super + space
 	dmenu_run
 
-# make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd ; \
+  pkill -USR1 -x tint2
 
 # open a "scratchpad" terminal
 F12
   xdotool search --onlyvisible --classname URxvtQuake windowunmap \
     || xdotool search --classname URxvtQuake windowmap \
     || urxvt -name URxvtQuake -geometry 110x20+297+1
+
+F1
+  setxkbmap us
+
+F2
+  setxkbmap ru

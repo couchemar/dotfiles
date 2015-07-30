@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 bspc config border_width        2
 bspc config window_gap         12
@@ -18,3 +18,8 @@ bspc monitor VGA1 -d I II III IV V VI VII VIII IX X
 # bspc rule -a Kupfer.py focus=on
 # bspc rule -a Screenkey manage=off
 bspc rule -a URxvtQuake sticky=on floating=on
+
+panel &
+
+# bspc config bottom_padding 30
+tint2 &

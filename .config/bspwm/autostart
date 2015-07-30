@@ -1,12 +1,9 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 autorandr --change
 
-panel &
+# panel &
 
-gnome-settings-daemon &
+# plasma-desktop &
 
-gnome-panel &
-
-gnome-terminal &
-
+# konsole &
