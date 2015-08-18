@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
 
     preBuild = ''
       substituteInPlace panel --replace xtitle ${pkgs.xtitle}/bin/xtitle
-      substituteInPlace panel --replace "bar -g" "${pkgs.bar}/bin/bar -g"
+      substituteInPlace panel --replace "bar -g" "${pkgs.bar}/bin/lemonbar -g"
     '';
 
     installPhase = ''
