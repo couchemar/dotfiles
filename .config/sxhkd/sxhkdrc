@@ -136,6 +136,11 @@ F12
     || xdotool search --classname URxvtQuake windowmap \
     || urxvt -name URxvtQuake -geometry 110x20+297+1
 
+F11
+  xdotool search --onlyvisible --name top_menu windowunmap \
+    || xdotool search --name top_menu windowmap \
+    || lilyterm --title top_menu  --geometry 110x20+297+1
+
 F1
   setxkbmap us
 
