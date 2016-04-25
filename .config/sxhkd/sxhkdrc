@@ -10,7 +10,7 @@ super + ctrl + Escape
 	gnome-screensaver-command -l
 
 super + w
-	bspc window -c
+	bspc node -c
 
 super + t
 	bspc desktop -l next
@@ -24,30 +24,30 @@ super + e
       	bspc desktop -E
 
 super + {s,f}
-	bspc window -t {floating,fullscreen}
+	bspc node -t {~floating,~fullscreen}
 
-super + {grave,Tab}
-	bspc {window,desktop} -f last
+#super + {grave,Tab}
+#	bspc {window,desktop} -f last
 
-super + apostrophe
-	bspc window -s last
+#super + apostrophe
+#	bspc window -s last
 
-super + {o,i}
-	bspc control --record-history off; \
-	bspc window {older,newer} -f; \
-	bspc control --record-history on
+#super + {o,i}
+#	bspc control --record-history off; \
+#	bspc window {older,newer} -f; \
+#	bspc control --record-history on
 
-super + y
-	bspc window -w last.manual
+#super + y
+#	bspc window -w last.manual
 
 super + m
-	bspc window -s biggest 
+	bspc node -s biggest 
 
 super + {_,shift + }{h,j,k,l}
-	bspc window -{f,s} {left,down,up,right}
+	bspc node -{f,s} {west,south,north,east}
 
 super + {_,shift + }c
-	bspc window -f {next,prev}
+	bspc node -f {next,prev}
 
 # circulate leaves
 super + {comma,period}
@@ -70,10 +70,10 @@ super + ctrl + bracket{left,right}
 	bspc desktop -f {prev.occupied,next.occupied}
 
 super + ctrl + {h,j,k,l}
-	bspc window -p {left,down,up,right}
+	bspc node -p {west,south,north,east}
 
 super + ctrl + {_,shift + }space
-	bspc {window -p cancel,desktop -c}
+	bspc {node -p cancel,desktop -c}
 
 super + alt + {h,j,k,l}
 	bspc window -e {left -10,down +10,up -10,right +10}
@@ -82,7 +82,7 @@ super + alt + shift + {h,j,k,l}
 	bspc window -e {right -10,up +10,down -10,left +10}
 
 super + ctrl + {1-9}
-	bspc window -r 0.{1-9}
+	bspc node -o 0.{1-9}
 
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,window -d} ^{1-9,10}
@@ -106,11 +106,11 @@ super + F{1,2}
 
 # move window to desktop
 alt + F{1,2}
-      bspc window --to-desktop {prev,next}
+      bspc node --to-desktop {prev,next}
 
 # move window to monitor
 ctrl + F{1,2}
-      bspc window --to-monitor {prev,next}
+      bspc node --to-monitor {prev,next}
 
 # move desktop to monitor
 super + alt + F{1,2}
@@ -132,9 +132,9 @@ super + Escape
 
 # open a "scratchpad" terminal
 F12
-  xdotool search --onlyvisible --classname URxvtQuake windowunmap \
-    || xdotool search --classname URxvtQuake windowmap \
-    || urxvt -name URxvtQuake -geometry 110x20+297+1
+  xdotool search --onlyvisible --classname scratchpad windowunmap \
+    || xdotool search --classname scratchpad windowmap \
+    || urxvt -name scratchpad -geometry 110x20+297+1
 
 F11
   xdotool search --onlyvisible --name top_menu windowunmap \
