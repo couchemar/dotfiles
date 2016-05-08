@@ -87,7 +87,7 @@ time2_font = sans 6
 clock_font_color = #FFFFFF 74
 clock_padding = 1 0
 clock_background_id = 0
-clock_rclick_command = orage
+clock_rclick_command = gsimplecal
 
 # Tooltips
 tooltip = 0

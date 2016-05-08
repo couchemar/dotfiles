@@ -1,8 +1,8 @@
 #! /usr/bin/env bash
 
-# autorandr --change
+autorandr --change
 
-panel &
+# panel &
 
 # plasma-desktop &
 
