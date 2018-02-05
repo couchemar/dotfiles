@@ -4,12 +4,12 @@ in
 
 stdenv.mkDerivation rec {
     name = "couchemar-panel-${version}";
-    version = "0.0.2";
+    version = "0.0.3";
     src = ./.;
 
     preBuild = ''
       substituteInPlace panel --replace xtitle ${pkgs.xtitle}/bin/xtitle
-      substituteInPlace panel --replace "bar -g" "${pkgs.bar}/bin/lemonbar -g"
+      substituteInPlace panel --replace "lemonbar -g" "${pkgs.bar}/bin/lemonbar -g"
     '';
 
     installPhase = ''
