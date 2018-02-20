@@ -7,7 +7,7 @@ super + alt + Escape
 	bspc quit
 # lockscreen
 super + ctrl + Escape
-	gnome-screensaver-command -l
+  bash -c "i3lock -i <(import -window root - | convert -blur -2x5 - png:-)"
 
 super + w
 	bspc node -c

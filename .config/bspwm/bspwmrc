@@ -20,6 +20,8 @@ bspc monitor HDMI1 -d im web web2
 bspc rule -a \*:scratchpad sticky=on state=floating
 # bspc rule -a top_menu sticky=on floating=on
 
+autorandr --change
+
 panel &
 
 tint2 &
